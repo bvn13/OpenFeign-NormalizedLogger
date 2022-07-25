@@ -15,7 +15,6 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * OpenFeign Logger
  * combines request and response part into single log entry:
- * <br></br>
  * <pre>
  * {@code
  *
