@@ -142,3 +142,13 @@ logging:
   level:
     me.bvn13.openfeign.logger.NormalizedFeignLogger: DEBUG
 ```
+
+### 5) Don't forget to specify FULL log level for your API class
+
+```yaml
+feign:
+  client:
+    config:
+      auth:
+        logger-level: FULL
+```
