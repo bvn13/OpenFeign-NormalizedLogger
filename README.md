@@ -12,10 +12,10 @@ communication into one log entry.
 
 ## Old bad Logger
 
-All parts are separeted from each other:
+All parts are separated from each other:
 1) Request:
    1) request headers - every header is put into separated entry
-   2) requst body - at separated entry
+   2) request body - at separated entry
 2) Response:
    1) response headers - separately
    2) response body - at separated entry as well
@@ -99,17 +99,17 @@ for Maven
 <dependency>
     <groupId>me.bvn13.openfeign.logger</groupId>
     <artifactId>feign-normalized-logger</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.4</version>
 </dependency>
 ```
 
 for Gradle
 
 ```groovy
-implementation 'me.bvn13.openfeign.logger:feign-normalized-logger:0.1.0'
+implementation 'me.bvn13.openfeign.logger:feign-normalized-logger:0.1.4'
 ```
 
-## 2) Create Feign configuration and enable logger
+## 2) Create Feign configuration and enable logger + specify FULL logging level
 
 ```java
 import feign.Logger;
@@ -119,6 +119,11 @@ public class MyFeignConfig {
     @Bean
     public Logger logger() {
         return new NormalizedFeignLogger();
+    }
+
+    @Bean
+    public Logger.Level logLevel() {
+        return Logger.Level.FULL;
     }
     
 }
@@ -140,15 +145,5 @@ for Slf4J + Logback
 ```yaml
 logging:
   level:
-    me.bvn13.openfeign.logger.NormalizedFeignLogger: DEBUG
-```
-
-### 5) Don't forget to specify FULL log level for your API class
-
-```yaml
-feign:
-  client:
-    config:
-      auth:
-        logger-level: FULL
+    me.bvn13.openfeign.logger.NormalizedFeignLogger: INFO
 ```

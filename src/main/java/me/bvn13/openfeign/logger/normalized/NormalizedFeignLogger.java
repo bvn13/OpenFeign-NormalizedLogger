@@ -95,7 +95,7 @@ public class NormalizedFeignLogger extends feign.Logger {
     }
 
     private void showLogs(String configKey) {
-        log.debug("normalized feign request " + methodName.get() + ": [\n" +
+        log.info("Normalized feign request " + methodName.get() + ": [\n" +
                 collectionToDelimitedString(logsRequest.get().getOrDefault(configKey, Collections.emptyList()), "\n") +
                 "\n] has response [\n" +
                 collectionToDelimitedString(logsResponse.get().getOrDefault(configKey, Collections.emptyList()), "\n") +
