@@ -138,7 +138,7 @@ public interface AuthApi {
 }
 ```
 
-### 4) Adjust DEBUG level for Normalized Logger
+### 4) Adjust INFO level for Normalized Logger
 
 for Slf4J + Logback
 
