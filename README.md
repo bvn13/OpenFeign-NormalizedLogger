@@ -83,6 +83,15 @@ x-xss-protection: 1; mode=block
 ]
 ```
 
+# Performance
+
+```
+Benchmark                                                      Mode  Cnt      Score     Error  Units
+NormalizedFeignLoggerBenchmarkTest.testFeignWithoutLogger     thrpt   25  16281.625 ± 279.774  ops/s
+NormalizedFeignLoggerBenchmarkTest.testNormalizedFeignLogger  thrpt   25   6081.675 ± 229.912  ops/s
+NormalizedFeignLoggerBenchmarkTest.testSlf4jFeignLogger       thrpt   25  16593.059 ± 151.327  ops/s
+```
+
 # How to use
 
 In order to use Normalized Logger into the application they must the following.
@@ -99,7 +108,7 @@ for Maven
 <dependency>
     <groupId>me.bvn13.openfeign.logger</groupId>
     <artifactId>feign-normalized-logger</artifactId>
-    <version>0.1.4</version>
+    <version>0.2.1</version>
 </dependency>
 ```
 
