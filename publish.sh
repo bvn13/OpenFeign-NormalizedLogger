@@ -8,6 +8,8 @@ git push --tags
 
 git push origin develop
 
+git checkout master
+
 read -p "Which version to publish? > " version
 
 git checkout $version
