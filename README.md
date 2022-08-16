@@ -108,7 +108,7 @@ for Maven
 <dependency>
     <groupId>me.bvn13.openfeign.logger</groupId>
     <artifactId>feign-normalized-logger</artifactId>
-    <version>0.1.4</version>
+    <version>0.2.1</version>
 </dependency>
 ```
 
