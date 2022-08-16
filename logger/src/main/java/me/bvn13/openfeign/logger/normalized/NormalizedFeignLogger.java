@@ -6,7 +6,6 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -70,16 +69,16 @@ public class NormalizedFeignLogger extends feign.Logger {
 
     private void init() {
         if (isResponse.get() == null) {
-            isResponse.set(new HashMap<>());
+            isResponse.set(new ConcurrentHashMap<>());
         }
         if (methodName.get() == null) {
-            methodName.set(new HashMap<>());
+            methodName.set(new ConcurrentHashMap<>());
         }
         if (logsRequest.get() == null) {
-            logsRequest.set(new HashMap<>());
+            logsRequest.set(new ConcurrentHashMap<>());
         }
         if (logsResponse.get() == null) {
-            logsResponse.set(new HashMap<>());
+            logsResponse.set(new ConcurrentHashMap<>());
         }
     }
 
