@@ -18,7 +18,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * <pre>
  * {@code
  *
- * Normalized feign request (HERE-ARE-CLASS-AND-METHOD): [
+ * normalized feign request (HERE-IS-CLASS-AND-METHOD): [
  *
  * ] has response [
  *
