@@ -9,12 +9,7 @@
     <artifactId>feign-normalized-logger</artifactId>
     <version>0.1.5-SNAPSHOT</version>
 
-    <modules>
-        <module>logger</module>
-        <module>logger-testing</module>
-    </modules>
-
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
 
     <name>OpenFeign Normalized Logger</name>
     <description>Normalized Logger for OpenFeign</description>
@@ -47,13 +42,8 @@
         <nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version>
         <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
         <gitflow-maven-plugin.version>1.18.0</gitflow-maven-plugin.version>
-
-        <!-- Testing -->
-        <junit.version>5.9.0</junit.version>
-        <jetty-server.version>11.0.11</jetty-server.version>
-        <jmh.version>1.35</jmh.version>
-        <httpclient.version>4.5.13</httpclient.version>
     </properties>
+
 
     <distributionManagement>
         <repository>
@@ -62,6 +52,28 @@
             <url>file://${project.build.directory}/mvn-repo</url>
         </repository>
     </distributionManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.github.openfeign</groupId>
+            <artifactId>feign-core</artifactId>
+            <version>${feign.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
     <build>
         <finalName>feign-normalized-logger</finalName>
